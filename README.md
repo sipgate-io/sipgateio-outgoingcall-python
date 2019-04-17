@@ -10,6 +10,7 @@ For further information regarding the sipgate REST API please visit https://api.
 
 - python3
 - pip3
+- VoIP client
 
 ### How To Use
 
@@ -35,7 +36,7 @@ callerId = 'DISPLAYED_CALLER_NUMBER'
 The `deviceId` uniquely identifies the phone extension which establishes the phone connection,
 this variable is needed only when the `caller` is a phone number and not a device extension. Further explanation is given in the section [Web Phone Extensions](#web-phone-extensions). Nevertheless you can still use both as device extension, but in this case the `deviceId` will be ignored.
 
-Use `callee` and `callerId` to set the recipient phone number and the displayed caller number respectively. 
+Use `callee` and `callerId` to set the recipient phone number and the displayed caller number respectively.
 
 Run the application:
 
@@ -120,16 +121,15 @@ Possible reasons are:
 
 #### HTTP Errors
 
-| reason                                                                                                                                              | errorcode |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | :-------: |
-| bad request (e.g. request body fields are empty or only contain spaces, timestamp is invalid etc.)                                                  |    400    |
-| username and/or password are wrong                                                                                                                  |    401    |
-| your account balance is insufficient                                                                                                                |    402    |
-| no permission to use specified Web Phone extension (e.g. user password must be reset in [web app](https://app.sipgate.com/login))                   |    403    |
-| wrong REST API endpoint                                                                                                                             |    404    |
-| wrong request method                                                                                                                                |    405    |
-| wrong or missing `Content-Type` header with `application/json`                                                                                      |    415    |
-
+| reason                                                                                                                            | errorcode |
+| --------------------------------------------------------------------------------------------------------------------------------- | :-------: |
+| bad request (e.g. request body fields are empty or only contain spaces, timestamp is invalid etc.)                                |    400    |
+| username and/or password are wrong                                                                                                |    401    |
+| your account balance is insufficient                                                                                              |    402    |
+| no permission to use specified Web Phone extension (e.g. user password must be reset in [web app](https://app.sipgate.com/login)) |    403    |
+| wrong REST API endpoint                                                                                                           |    404    |
+| wrong request method                                                                                                              |    405    |
+| wrong or missing `Content-Type` header with `application/json`                                                                    |    415    |
 
 ### Related
 
