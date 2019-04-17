@@ -3,12 +3,14 @@ import requests
 
 def main():
 	baseURL = 'https://api.sipgate.com/v2'
+
 	username = 'YOUR_EMAIL'
 	password = 'YOUR_PASSWORD'
 
 	deviceId = 'YOUR_SIPGATE_DEVICE_EXTENSION'
-	callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
 	caller = 'DIALING_DEVICE'
+
+	callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
 	callerId = 'DISPLAYED_CALLER_NUMBER'
 
 	headers = {
