@@ -82,7 +82,7 @@ We use the python package 'requests' for request generation and execution. The `
 - authorization header
 - request body
 
-The request URL consists of the base URL defined above and the endpoint `/sessions/calls`. The function `HTTPBasicAuth` from the 'requests' package takes the credentials and generates the required Basic Auth header as authorization header (for more information on Basic Auth see our [code example](https://github.com/sipgate/sipgateio-basicauth-python)).
+The request URL consists of the base URL defined above and the endpoint `/sessions/calls`. The function `HTTPBasicAuth` from the 'requests' package takes the credentials and generates the required Basic Auth header as authorization header (for more information on Basic Auth see our [code example](https://github.com/sipgate-io/sipgateio-basicauth-python)).
 
 ```python
 response = requests.post(
