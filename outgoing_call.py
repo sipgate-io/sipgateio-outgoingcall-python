@@ -25,14 +25,14 @@ def outgoing_call():
 	}
 
 	response = requests.post(
-		f'{baseURL}/sessions/calls',
+		baseURL + '/sessions/calls',
 		json=requestBody,
 		auth=requests.auth.HTTPBasicAuth(username, password),
 		headers=headers
 	)
 
-	print(f'Status: {response.status_code}')
-	print(f'Body: {response.content.decode("utf-8")}')
+	print('Status:', response.status_code)
+	print('Body:', response.content.decode("utf-8"))
 
 
 if __name__ == "__main__":
