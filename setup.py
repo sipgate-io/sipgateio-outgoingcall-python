@@ -10,13 +10,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
+    name='sipgateio-outgoingcall-python',
     version='0.1.0',
-    description='Sample package description',
+    description='A demonstration of how to initiate a call using the sipgate REST API.',
     long_description=readme,
-    author='<author_name>',
-    author_email='author@example.com',
-    url='',
+    author='sipgate',
+    author_email='',
+    url='https://github.com/sipgate-io/sipgateio-outgoingcall-python',
     license=license,
     packages=find_packages(exclude=())
 )
