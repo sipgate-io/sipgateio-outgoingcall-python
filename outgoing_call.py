@@ -2,31 +2,31 @@ import requests
 
 
 def outgoing_call():
-	baseURL = 'https://api.sipgate.com/v2'
+	base_url = 'https://api.sipgate.com/v2'
 
 	username = 'YOUR_EMAIL'
 	password = 'YOUR_PASSWORD'
 
-	deviceId = 'YOUR_SIPGATE_DEVICE_EXTENSION'
+	device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
 	caller = 'DIALING_DEVICE'
 
 	callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
-	callerId = 'DISPLAYED_CALLER_NUMBER'
+	caller_id = 'DISPLAYED_CALLER_NUMBER'
 
 	headers = {
 		'Content-Type': 'application/json'
 	}
 
-	requestBody = {
-		"deviceId": deviceId,
+	request_body = {
+		"deviceId": device_id,
 		"callee": callee,
-		"caller" : caller,
-		"callerId" : callerId
+		"caller": caller,
+		"callerId": caller_id
 	}
 
 	response = requests.post(
-		baseURL + '/sessions/calls',
-		json=requestBody,
+		base_url + '/sessions/calls',
+		json=request_body,
 		auth=requests.auth.HTTPBasicAuth(username, password),
 		headers=headers
 	)
