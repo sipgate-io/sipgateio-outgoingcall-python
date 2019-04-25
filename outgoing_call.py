@@ -1,7 +1,7 @@
 import requests
 
 
-def main():
+def outgoing_call():
 	baseURL = 'https://api.sipgate.com/v2'
 
 	username = 'YOUR_EMAIL'
@@ -36,4 +36,4 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+	outgoing_call()
