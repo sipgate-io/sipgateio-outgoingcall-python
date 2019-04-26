@@ -22,7 +22,7 @@ Install dependencies:
 $ pip3 install -r requirements.txt
 ```
 
-In order to run the code you must set the following variables in [main.py](./main.py):
+In order to run the code you must set the following variables in [outgoing_call.py](./outgoing_call.py):
 
 ```python
 username = 'YOUR_EMAIL'
@@ -43,7 +43,7 @@ Use `callee` and `caller_id` to set the recipient phone number and the displayed
 Run the application:
 
 ```bash
-$ python3 main.py
+$ python3 outgoing_call.py
 ```
 
 ##### How It Works
