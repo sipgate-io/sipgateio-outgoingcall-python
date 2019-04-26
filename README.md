@@ -8,7 +8,7 @@ For further information regarding the sipgate REST API please visit https://api.
 
 ### Prerequisites
 
-- python3.6
+- python3
 - pip3
 - VoIP client
 
@@ -28,17 +28,17 @@ In order to run the code you must set the following variables in [main.py](./mai
 username = 'YOUR_EMAIL'
 password = 'YOUR_PASSWORD'
 
-deviceId = 'YOUR_SIPGATE_DEVICE_EXTENSION'
+device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
 caller = 'DIALING_DEVICE';
 
 callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
-callerId = 'DISPLAYED_CALLER_NUMBER'
+caller_id = 'DISPLAYED_CALLER_NUMBER'
 ```
 
-The `deviceId` uniquely identifies the phone extension which establishes the phone connection,
-this variable is needed only when the `caller` is a phone number and not a device extension. Further explanation is given in the section [Web Phone Extensions](#web-phone-extensions). Nevertheless you can still use both as device extension, but in this case the `deviceId` will be ignored.
+The `device_id` uniquely identifies the phone extension which establishes the phone connection,
+this variable is needed only when the `caller` is a phone number and not a device extension. Further explanation is given in the section [Web Phone Extensions](#web-phone-extensions). Nevertheless you can still use both as device extension, but in this case the `device_id` will be ignored.
 
-Use `callee` and `callerId` to set the recipient phone number and the displayed caller number respectively.
+Use `callee` and `caller_id` to set the recipient phone number and the displayed caller number respectively.
 
 Run the application:
 
@@ -53,7 +53,7 @@ The following explanations lay out how the code example works. There is no need 
 The sipgate REST API is available under the following base URL:
 
 ```python
-baseURL = 'https://api.sipgate.com/v2'
+base_url = 'https://api.sipgate.com/v2'
 ```
 
 The API expects request data in JSON format. Thus the `Content-Type` header is set to:
@@ -68,10 +68,10 @@ The request body contains the fields: `deviceId`, `caller`, `callee` and `caller
 
 ```python
 requestBody = {
-		"deviceId": deviceId,
+		"deviceId": device_id,
 		"callee": callee,
 		"caller" : caller,
-		"callerId" : callerId
+		"callerId" : caller_id
 	}
 ```
 
@@ -86,7 +86,7 @@ The request URL consists of the base URL defined above and the endpoint `/sessio
 
 ```python
 response = requests.post(
-	f'{baseURL}/sessions/calls',
+	base_url + '/sessions/calls',
 	headers=headers,
 	auth=requests.auth.HTTPBasicAuth(username, password),
 	json=requestBody
