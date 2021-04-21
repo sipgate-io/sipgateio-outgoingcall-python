@@ -4,8 +4,8 @@ import requests
 def outgoing_call():
 	base_url = 'https://api.sipgate.com/v2'
 
-	username = 'YOUR_EMAIL'
-	password = 'YOUR_PASSWORD'
+	token_id = 'YOUR_TOKEN_ID'
+	token = 'YOUR_TOKEN'
 
 	device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
 	caller = 'DIALING_DEVICE'
@@ -27,7 +27,7 @@ def outgoing_call():
 	response = requests.post(
 		base_url + '/sessions/calls',
 		json=request_body,
-		auth=requests.auth.HTTPBasicAuth(username, password),
+		auth=requests.auth.HTTPBasicAuth(token_id, token),
 		headers=headers
 	)
 

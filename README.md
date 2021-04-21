@@ -25,8 +25,8 @@ $ pip3 install -r requirements.txt
 In order to run the code you must set the following variables in [outgoing_call.py](./outgoing_call.py):
 
 ```python
-username = 'YOUR_EMAIL'
-password = 'YOUR_PASSWORD'
+token_id = 'YOUR_TOKEN_ID'
+token = 'YOUR_TOKEN'
 
 device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
 caller = 'DIALING_DEVICE';
@@ -88,7 +88,7 @@ The request URL consists of the base URL defined above and the endpoint `/sessio
 response = requests.post(
 	base_url + '/sessions/calls',
 	headers=headers,
-	auth=requests.auth.HTTPBasicAuth(username, password),
+	auth=requests.auth.HTTPBasicAuth(token_id, token),
 	json=requestBody
 )
 ```
@@ -126,7 +126,7 @@ Possible reasons are:
 | reason                                                                                                                            | errorcode |
 | --------------------------------------------------------------------------------------------------------------------------------- | :-------: |
 | bad request (e.g. request body fields are empty or only contain spaces, timestamp is invalid etc.)                                |    400    |
-| username and/or password are wrong                                                                                                |    401    |
+| token_id and/or token are wrong                                                                                                |    401    |
 | insufficient account balance                                                                                                                        |    402    |
 | no permission to use specified Web Phone extension (e.g. user password must be reset in [web app](https://app.sipgate.com/login)) |    403    |
 | wrong REST API endpoint                                                                                                           |    404    |
