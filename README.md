@@ -35,6 +35,12 @@ callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
 caller_id = 'DISPLAYED_CALLER_NUMBER'
 ```
 
+The token should have the following scopes:
+
+- `sessions:calls:write`
+
+For more information about personal access token, visit https://www.sipgate.io/rest-api/authentication#personalAccessToken.
+
 The `device_id` uniquely identifies the phone extension which establishes the phone connection,
 this variable is needed only when the `caller` is a phone number and not a device extension. Further explanation is given in the section [Web Phone Extensions](#web-phone-extensions). Nevertheless you can still use both as device extension, but in this case the `device_id` will be ignored.
 
@@ -126,8 +132,8 @@ Possible reasons are:
 | reason                                                                                                                            | errorcode |
 | --------------------------------------------------------------------------------------------------------------------------------- | :-------: |
 | bad request (e.g. request body fields are empty or only contain spaces, timestamp is invalid etc.)                                |    400    |
-| token_id and/or token are wrong                                                                                                |    401    |
-| insufficient account balance                                                                                                                        |    402    |
+| token_id and/or token are wrong                                                                                                   |    401    |
+| insufficient account balance                                                                                                      |    402    |
 | no permission to use specified Web Phone extension (e.g. user password must be reset in [web app](https://app.sipgate.com/login)) |    403    |
 | wrong REST API endpoint                                                                                                           |    404    |
 | wrong request method                                                                                                              |    405    |
