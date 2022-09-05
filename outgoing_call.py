@@ -1,17 +1,20 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+token = os.environ.get("token")
+token_id = os.environ.get("tokenId")
+
+callee = os.environ.get("callee")
+caller = os.environ.get("caller")
+device_id = os.environ.get("device_id")
+caller_id = os.environ.get("caller_id")
 
 
 def outgoing_call():
 	base_url = 'https://api.sipgate.com/v2'
-
-	token_id = 'YOUR_TOKEN_ID'
-	token = 'YOUR_TOKEN'
-
-	device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
-	caller = 'DIALING_DEVICE'
-
-	callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
-	caller_id = 'DISPLAYED_CALLER_NUMBER'
 
 	headers = {
 		'Content-Type': 'application/json'

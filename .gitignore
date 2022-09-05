@@ -224,3 +224,5 @@ tags
 .history
 
 # End of https://www.gitignore.io/api/vim,git,macos,linux,pycharm+all,intellij+all,visualstudiocode
+
+.env

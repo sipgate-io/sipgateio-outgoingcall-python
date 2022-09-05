@@ -22,18 +22,7 @@ Install dependencies:
 $ pip3 install -r requirements.txt
 ```
 
-In order to run the code you must set the following variables in [outgoing_call.py](./outgoing_call.py):
-
-```python
-token_id = 'YOUR_TOKEN_ID'
-token = 'YOUR_TOKEN'
-
-device_id = 'YOUR_SIPGATE_DEVICE_EXTENSION'
-caller = 'DIALING_DEVICE';
-
-callee = 'YOUR_RECIPIENT_PHONE_NUMBER'
-caller_id = 'DISPLAYED_CALLER_NUMBER'
-```
+Create the `.env` file by copying the `.env.example`. Set the values according to the comment above each variable.
 
 The token should have the following scopes:
 
