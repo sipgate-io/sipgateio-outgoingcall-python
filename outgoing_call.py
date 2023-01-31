@@ -4,13 +4,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-token = os.environ.get("token")
-token_id = os.environ.get("tokenId")
+token = os.environ.get("TOKEN")
+token_id = os.environ.get("TOKEN_ID")
 
-callee = os.environ.get("callee")
-caller = os.environ.get("caller")
-device_id = os.environ.get("device_id")
-caller_id = os.environ.get("caller_id")
+callee = os.environ.get("CALLEE")
+caller = os.environ.get("CALLER")
+device_id = os.environ.get("DEVICE_ID")
+caller_id = os.environ.get("CALLER_ID")
 
 
 def outgoing_call():
